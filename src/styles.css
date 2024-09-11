@@ -1,0 +1,221 @@
+@font-face {
+  font-family: "normal";
+  src: url("https://ignitedsstudios.github.io/IgnitedsLauncher/src/fonts/Mont-HeavyDEMO.otf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "titles";
+  src: url("https://ignitedsstudios.github.io/IgnitedsLauncher/src/fonts/titles.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "mojangles";
+  src: url("../assets/fonts/MinecraftTen.ttf")
+    format("truetype");
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+#container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+#logo {
+  width: 400px;
+  margin-right: 10px;
+}
+
+#title {
+  font-family: 'mojangles';
+  font-size: 40px;
+  color: white;
+  text-shadow:
+    2px 2px 3px black,
+    4px 4px 5px black,
+    6px 6px 7px black;
+  text-align: center;
+}
+
+#content {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#startButton {
+  margin-bottom: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#startImage {
+  width: 30%;
+  height: 30%;
+  object-fit: contain;
+}
+
+#startButton {
+  width: 140px;
+  padding: 12px 12px;
+  background-color: #b400ab;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: 'mojangles';
+  font-size: 18px;
+  border-bottom: 10px solid #7d0077;
+  box-shadow: 0px 0px 0 2px black;
+  transform-origin: bottom;
+  position: relative;
+}
+
+#downloadButton {
+  width: 120px;
+  padding: 10px 12px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: 'normal';
+  font-size: 10px;
+  transform-origin: bottom;
+  position: relative;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.8, 1.5);
+  }
+  50% {
+    transform: scale(1.5, 0.8);
+  }
+  75% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.bounce {
+  animation: bounce 0.5s ease forwards;
+}
+
+@media (max-width: 480px) {
+  #startImage {
+    width: 40%;
+    height: 40%;
+  }
+
+  #downloadButton {
+    min-width: 30%;
+    max-width: 50%;
+    padding: 2px 4px;
+  }
+}
+
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+#backgroundContainer {
+  transition: opacity 0.5s ease-in-out;
+}
+
+#bottomContainer {
+  position: absolute;
+  bottom: 20px;
+  width: calc(100% - 40px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  left: 20px;
+}
+
+#reloadButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#reloadButton img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+#status {
+  display: flex;
+  align-items: center;
+}
+
+#statusIcon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+#playersOnline {
+  font-family: 'mojangles';
+  color: white;
+  margin-left: 10px;
+}
+
+#pingIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-left: 10px;
+}
+
+#ping {
+  font-family: 'mojangles';
+  color: white;
+  margin-right: 2px;
+  margin-left: 10px;
+  font-size: 10px;
+}
