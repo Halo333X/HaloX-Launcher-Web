@@ -43,7 +43,7 @@ function setupVideoElement(video, src) {
   video.style.width = "100%";
   video.style.height = "100%";
   video.style.objectFit = "cover";
-  video.src = "../assets/background3.mp4";
+  video.src = "./assets/background3.mp4";
   setTimeout(() => video.play(), 2000);
 }
 
@@ -113,9 +113,9 @@ function updateStatusDisplay(playersOnline, ping) {
   const pingIcon = getPingIcon(ping);
 
   statusContainer.innerHTML = `
-    <img id="statusIcon" src="../assets/playersIcon.png" alt="Players Icon" style="width: 20px; object-fit: contain;" />
+    <img id="statusIcon" src="./assets/playersIcon.png" alt="Players Icon" style="width: 20px; object-fit: contain;" />
     <span id="playersOnline">${playersOnline}</span>
-    <img id="pingIcon" src="../assets/${pingIcon}" alt="Ping" style="width: 20px; object-fit: contain; margin-left: 10px;" />
+    <img id="pingIcon" src="./assets/${pingIcon}" alt="Ping" style="width: 20px; object-fit: contain; margin-left: 10px;" />
     <span id="ping">${ping} ms</span>
   `;
 }

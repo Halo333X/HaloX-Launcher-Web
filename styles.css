@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: "mojangles";
-  src: url("../assets/fonts/MinecraftTen.ttf")
+  src: url("./assets/fonts/MinecraftTen.ttf")
     format("truetype");
 }
 body,
