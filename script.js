@@ -43,7 +43,7 @@ function setupVideoElement(video, src) {
   video.style.width = "100%";
   video.style.height = "100%";
   video.style.objectFit = "cover";
-  video.src = "./assets/background3.mp4";
+  video.src = src;
   setTimeout(() => video.play(), 2000);
 }
 
