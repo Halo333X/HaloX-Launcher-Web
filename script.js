@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 async function fetchEventData() {
-  const response = await fetch("https://halo333x.github.io/HaloX-Launcher/src/event.json");
+  const response = await fetch("https://halo333x.github.io/HaloX-Launcher-Web/event.json");
   return await response.json();
 }
 
