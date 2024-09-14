@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <video id="background" autoplay muted loop class="background-video" onclick="pauseVideo()">
+    <video
+      id="background"
+      autoplay
+      muted
+      loop
+      class="background-video"
+      onclick="pauseVideo()"
+    >
       <source src="assets/background3.mp4" type="video/mp4" />
       Tu navegador no soporta video.
     </video>
@@ -19,19 +26,35 @@
       </div>
       <div class="button-container">
         <button class="button" onclick="openMinecraft()">Start</button>
-        <button class="button-small" onclick="downloadPacks()">Download Packs</button>
+        <button class="button-small" onclick="downloadPacks()">
+          Download Packs
+        </button>
       </div>
     </div>
-    <img
-      src="assets/reloadLauncher.png"
-      alt="Recargar"
-      class="reload-btn"
-      onclick="reloadLauncher()"
-    />
+    <div class="button-group">
+      <img
+        src="assets/reloadLauncher.png"
+        alt="Recargar"
+        class="reload-btn"
+        onclick="reloadLauncher()"
+      />
+      <img
+        id="playicon"
+        src="assets/playing_video.png"
+        alt="Pausa"
+        class="pause-btn"
+        onclick="pauseVideo()"
+      />
+    </div>
     <div class="corner-images">
       <img class="players" src="assets/playersIcon.png" alt="Image 1" />
       <span id="players">0</span>
-      <img id="ping_icon" class="ping" src="assets/ping_green.png" alt="Image 2" />
+      <img
+        id="ping_icon"
+        class="ping"
+        src="assets/ping_green.png"
+        alt="Image 2"
+      />
       <span id="ping">0</span>
     </div>
     <script src="main.js"></script>

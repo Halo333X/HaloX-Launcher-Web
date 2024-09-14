@@ -118,7 +118,6 @@ body {
   text-align: center;
 }
 
-
 /* Mantén la clase bounce sólo en la interacción */
 .button:active {
   animation: bounce 0.5s ease forwards;
@@ -137,18 +136,23 @@ body {
   transition: 0.3s ease;
 }
 
-/* Estilo del botón de reload */
-.reload-btn {
+.button-group {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  width: 20px;
-  cursor: pointer;
+  display: flex;
+  gap: 10px;
 }
 
-/* Estilo de las imágenes adicionales en la esquina derecha */
+.reload-btn, .pause-btn {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
 .corner-images {
-  font-family: 'mojangles';
+  font-family: "mojangles";
   font-size: 14px;
   color: white;
   position: fixed;

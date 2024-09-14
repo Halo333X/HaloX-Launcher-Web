@@ -21,12 +21,15 @@ function reloadLauncher() {
 }
 
 function pauseVideo() {
+  const pauseIcon = document.getElementById('playicon');
   if (video.paused) {
     video.play();
     video.style.opacity = 1;
+    pauseIcon.src = "assets/playing_video.png";
   } else {
     video.pause();
     video.style.opacity = 0.5;
+    pauseIcon.src = "assets/pause_video.png";
   }
 }
 
