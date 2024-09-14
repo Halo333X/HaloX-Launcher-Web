@@ -2,6 +2,7 @@ let ip, port, packs;
 const video = document.getElementById("background");
 
 setTimeout(() => {
+  video.play();
   video.muted = false;
 }, 500);
 
