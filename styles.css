@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "normal";
   src: url("https://ignitedsstudios.github.io/IgnitedsLauncher/src/fonts/Mont-HeavyDEMO.otf")
@@ -5,118 +11,66 @@
 }
 
 @font-face {
-  font-family: "titles";
-  src: url("https://ignitedsstudios.github.io/IgnitedsLauncher/src/fonts/titles.ttf")
-    format("truetype");
+  font-family: "mojangles";
+  src: url("./assets/fonts/MinecraftTen.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "mojangles";
-  src: url("./assets/fonts/MinecraftTen.ttf")
-    format("truetype");
-}
 body,
 html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
   background-color: black;
 }
 
-#container {
-  position: relative;
+/* Estilo del fondo de video */
+.background-video {
+  transition: opacity 0.5s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Contenedor principal */
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
+  height: 100vh; /* Asegura que el contenedor ocupe la altura completa de la ventana */
+  padding: 20px; /* Añade un poco de padding alrededor para evitar que los elementos queden demasiado pegados a los bordes */
 }
 
-#header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-}
-
-#logo {
-  width: 400px;
-  margin-right: 10px;
-}
-
-#title {
-  font-family: 'mojangles';
-  font-size: 40px;
-  color: white;
-  text-shadow:
-    2px 2px 3px black,
-    4px 4px 5px black,
-    6px 6px 7px black;
+/* Estilo del header simulado */
+.header {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  margin-bottom: 40px; /* Espacio entre el header y los botones */
   text-align: center;
 }
 
-#content {
-  position: absolute;
-  bottom: 50px;
+/* Estilo del título con imagen */
+.title {
+  margin-top: 10px; /* Espacio entre el borde superior del header y el título */
+}
+
+/* Contenedor de botones */
+.button-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-#startButton {
+  gap: 10px;
+  margin-top: auto; /* Empuja el contenedor de botones hacia abajo */
   margin-bottom: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-#startImage {
-  width: 30%;
-  height: 30%;
-  object-fit: contain;
-}
-
-#startButton {
-  width: 140px;
-  padding: 12px 12px;
-  background-color: #b400ab;
-  color: white;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-  font-family: 'mojangles';
-  font-size: 18px;
-  border-bottom: 10px solid #7d0077;
-  box-shadow: 0px 0px 0 2px black;
-  transform-origin: bottom;
-  position: relative;
-}
-
-#downloadButton {
-  width: 120px;
-  padding: 10px 12px;
-  background-color: transparent;
-  color: white;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-  font-family: 'normal';
-  font-size: 10px;
-  transform-origin: bottom;
-  position: relative;
-}
-
+/* Estilo del botón Start con animación de rebote */
 @keyframes bounce {
   0% {
     transform: scale(1, 1);
@@ -139,83 +93,71 @@ html {
   animation: bounce 0.5s ease forwards;
 }
 
-@media (max-width: 480px) {
-  #startImage {
-    width: 40%;
-    height: 40%;
-  }
-
-  #downloadButton {
-    min-width: 30%;
-    max-width: 50%;
-    padding: 2px 4px;
-  }
-}
-
-body {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-#backgroundContainer {
-  transition: opacity 0.5s ease-in-out;
-}
-
-#bottomContainer {
-  position: absolute;
-  bottom: 20px;
-  width: calc(100% - 40px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  left: 20px;
-}
-
-#reloadButton {
-  background: none;
+/* Estilo del botón Start */
+.button {
+  position: relative;
+  z-index: 1;
+  font-family: "mojangles";
+  padding: 20px;
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+  background-color: #ce00ca;
   border: none;
+  border-bottom: 5px solid #6e006c;
+  color: white;
+  border-radius: 0px;
   cursor: pointer;
+  box-sizing: border-box;
+  transition: 0.3s ease;
+  margin-bottom: 0px;
+  box-shadow: 0px 0px 0 2px black;
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-#reloadButton img {
-  width: 25px;
-  height: 25px;
-  object-fit: contain;
-}
-
-#status {
-  display: flex;
   align-items: center;
+  text-align: center;
 }
 
-#statusIcon {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
+
+/* Mantén la clase bounce sólo en la interacción */
+.button:active {
+  animation: bounce 0.5s ease forwards;
 }
 
-#playersOnline {
-  font-family: 'mojangles';
+/* Estilo del botón Download Packs */
+.button-small {
+  font-family: "normal";
+  padding: 10px 25px;
+  font-size: 12px;
+  background-color: transparent;
   color: white;
-  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-#pingIcon {
+/* Estilo del botón de reload */
+.reload-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
   width: 20px;
-  height: 20px;
-  object-fit: contain;
-  margin-left: 10px;
+  cursor: pointer;
 }
 
-#ping {
+/* Estilo de las imágenes adicionales en la esquina derecha */
+.corner-images {
   font-family: 'mojangles';
+  font-size: 14px;
   color: white;
-  margin-right: 2px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.corner-images img {
+  width: 20px;
   margin-left: 10px;
-  font-size: 10px;
+  margin-right: 10px;
 }

@@ -5,67 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HaloX Launcher</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="./assets/icon.ico" type="image/png" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const video = document.getElementById("backgroundVideo");
-        document.addEventListener("click", () => {
-          if (video) {
-            if (video.paused) {
-              video
-                .play()
-            } else {
-              video.pause();
-            }
-          }
-        });
-
-        document.addEventListener("keydown", (event) => {
-          if (event.code === "Space") {
-            event.preventDefault();
-            if (video) {
-              if (video.paused) {
-                video
-                  .play()
-                  .catch((error) =>
-                    console.error("Error playing video:", error)
-                  );
-              } else {
-                video.pause();
-              }
-            }
-          }
-        });
-      });
-    </script>
   </head>
   <body>
-    <div id="container">
-      <div id="backgroundContainer">
-        <video id="backgroundVideo" autoplay loop muted></video>
-        <img id="backgroundImage" alt="Background Image" />
-      </div>
-      <div id="header">
-        <img id="logo" src="./assets/icon2.png" alt="Logo" />
-        <div id="title"></div>
-      </div>
-      <div id="content">
-        <button id="startButton">
-          START
-        </button>
-        <button id="downloadButton">Download Packs</button>
-      </div>
-      <div id="bottomContainer">
-        <button id="reloadButton">
-          <img src="./assets/reloadLauncher.png" alt="Reload" />
-        </button>
-        <div id="status">
-          <span id="playersOnline">0</span>
-          <img id="statusIcon" src="./assets/playersIcon.png" alt="Players Icon" style="width: 20px; object-fit: contain;" />
-          <img id="pingIcon" src="./assets/ping_green.png" alt="Ping" style="width: 20px; object-fit: contain; margin-left: 10px;" />
+    <video id="background" autoplay muted loop class="background-video" onclick="pauseVideo()">
+      <source src="assets/background3.mp4" type="video/mp4" />
+      Tu navegador no soporta video.
+    </video>
+    <div class="container">
+      <div class="header">
+        <div class="title">
+          <img src="assets/icon.png" alt="Título del Launcher" width="400" />
         </div>
-      </div>      
+      </div>
+      <div class="button-container">
+        <button class="button" onclick="openMinecraft()">Start</button>
+        <button class="button-small" onclick="downloadPacks()">Download Packs</button>
+      </div>
     </div>
-    <script src="script.js"></script>
+    <img
+      src="assets/reloadLauncher.png"
+      alt="Recargar"
+      class="reload-btn"
+      onclick="reloadLauncher()"
+    />
+    <div class="corner-images">
+      <img class="players" src="assets/playersIcon.png" alt="Image 1" />
+      <span id="players">0</span>
+      <img id="ping_icon" class="ping" src="assets/ping_green.png" alt="Image 2" />
+      <span id="ping">0</span>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>
