@@ -17,7 +17,6 @@ class Utils {
         return {
           ip: data.ip,
           port: data.port,
-          ping: data.ping,
           players: data.players,
           textures: data.textures
         };
@@ -81,21 +80,35 @@ class Utils {
     static async updateLauncher() {
       const server = await this.getServer();
       const players = server.players || 0;
-      const ping = server.ping || 1;
-      const img = this.getPingIcon(ping);
+      // const ping = this.getPing() || 1;
+      // const img = this.getPingIcon(ping);
       document.getElementById('players').innerText = players;
-      document.getElementById('ping').innerText = ping + ' ms';
-      document.getElementById('ping_icon').src = img;
+      // document.getElementById('ping').innerText = ping + ' ms';
+      // document.getElementById('ping_icon').src = img;
     }  
 
-    /**
-     * @param ping {number}
-    */
-    static getPingIcon(ping) {
-        if (ping <= 100) return "./assets/ping_green.png";
-        else if (ping <= 150) return "./assets/ping_yellow.png";
-        else return "./assets/ping_red.png";
-    }
+    // /**
+    //  * @param ping {number}
+    // */
+    // static getPingIcon(ping) {
+    //     if (ping <= 100) return "./assets/ping_green.png";
+    //     else if (ping <= 150) return "./assets/ping_yellow.png";
+    //     else return "./assets/ping_red.png";
+    // }
+
+    // static getPing() {
+    //   const start = performance.now();
+    //   fetch(window.location.href)
+    //     .then(response => response.text())
+    //     .then(data => {
+    //       const end = performance.now(); 
+    //       const latency = end - start;
+    //       return latency.toFixed(2);
+    //     })
+    //     .catch(error => {
+    //       return 1;
+    //     });
+    // }
 
     // MUSICA
     static playRandomMusic() {

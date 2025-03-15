@@ -102,7 +102,7 @@ body {
 }
 
 .bounce {
-  animation: bounce 0.5s ease forwards;
+  animation: bounce 0.65s ease forwards;
 }
 
 /* Estilo del botón Start */
@@ -121,7 +121,7 @@ body {
   border-radius: 0px;
   cursor: pointer;
   box-sizing: border-box;
-  transition: 0.3s ease;
+  transition: 1s ease;
   margin-bottom: 0px;
   box-shadow: 0px 0px 0 2px black;
   display: flex;
@@ -132,7 +132,7 @@ body {
 
 /* Mantén la clase bounce sólo en la interacción */
 .button:active {
-  animation: bounce 0.5s ease forwards;
+  animation: bounce 1s ease forwards;
 }
 
 /* Estilo del botón Download Packs */
