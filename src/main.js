@@ -1,7 +1,10 @@
 const db = 'https://bedrock-kingdoms-default-rtdb.firebaseio.com/';
 const video = document.getElementById("background");
+const audio = document.getElementById("music");
 
 class Utils {
+    static playedSongs = [];
+
     // DB
     static async getData() {
         let data;
@@ -29,10 +32,12 @@ class Utils {
         const pauseIcon = document.getElementById('playicon');
         if (video.paused) {
             video.play();
+            audio.play();
             video.style.opacity = 1;
             pauseIcon.src = "./assets/playing_video.png";
         } else {
             video.pause();
+            audio.pause();
             video.style.opacity = 0.5;
             pauseIcon.src = "./assets/pause_video.png";
         }
@@ -51,6 +56,12 @@ class Utils {
             }
         }, 500);
     }
+
+    static async openDiscord() {
+      const target = this.isMobile() ? "_blank" : "_self";
+      const url = `https://discord.gg/54KP7mapjH`;
+      window.open(url, target);
+  }
 
     static isMobile() {
         return /Mobi|Android/i.test(navigator.userAgent);
@@ -75,7 +86,7 @@ class Utils {
       document.getElementById('players').innerText = players;
       document.getElementById('ping').innerText = ping + ' ms';
       document.getElementById('ping_icon').src = img;
-  }  
+    }  
 
     /**
      * @param ping {number}
@@ -85,13 +96,35 @@ class Utils {
         else if (ping <= 150) return "./assets/ping_yellow.png";
         else return "./assets/ping_red.png";
     }
+
+    // MUSICA
+    static playRandomMusic() {
+        if (this.playedSongs.length === 16) {
+            this.playedSongs = [];
+        }
+
+        let randomSong;
+        do {
+            randomSong = Math.floor(Math.random() * 16) + 1; // Genera un número entre 1 y 16
+        } while (this.playedSongs.includes(randomSong));
+
+        this.playedSongs.push(randomSong);
+
+        audio.src = `./assets/music/${randomSong}.mp3`;
+        setTimeout(() => {
+          audio.play();
+        }, 500);
+        audio.onended = () => this.playRandomMusic(); // Cuando termine, reproducir otra
+    }
 }
 
-setTimeout(() => {
-  video.play();
-  video.muted = false;
-}, 500);
-
+video.play();
+video.muted = false;
+document.addEventListener("click", () => {
+  audio.muted = false;
+  audio.volume = 1;
+  Utils.playRandomMusic();
+}, { once: true });
 
 setInterval(() => Utils.updateLauncher(), 1000);
 

@@ -5,6 +5,17 @@
   user-select: none;
 }
 
+@media screen and (orientation: portrait) {
+  body {
+    transform: rotate(90deg);
+    transform-origin: center;
+    width: 100vh;
+    height: 100vw;
+    overflow: hidden;
+    position: fixed;
+  }
+}
+
 @font-face {
   font-family: "normal";
   src: url("https://ignitedsstudios.github.io/IgnitedsLauncher/src/fonts/Mont-HeavyDEMO.otf")
@@ -103,9 +114,9 @@ body {
   width: 100px;
   height: 30px;
   font-size: 20px;
-  background-color: #ce00ca;
+  background-color: #c8860c;
   border: none;
-  border-bottom: 5px solid #6e006c;
+  border-bottom: 5px solid #661F0D;
   color: white;
   border-radius: 0px;
   cursor: pointer;
@@ -145,7 +156,7 @@ body {
   gap: 10px;
 }
 
-.reload-btn, .pause-btn {
+.reload-btn, .pause-btn, .discord-btn {
   cursor: pointer;
   width: 20px;
   height: 20px;

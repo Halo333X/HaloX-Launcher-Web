@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HaloX Launcher</title>
+    <title>Bedrock Kingdoms</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <audio id="music" muted autoplay hidden></audio>
     <video
       id="background"
       muted
@@ -20,7 +21,7 @@
     <div class="container">
       <div class="header">
         <div class="title">
-          <img src="assets/icon2.png" alt="Título del Launcher" width="600" />
+          <img src="assets/icon3.png" alt="Título del Launcher" width="600" />
         </div>
       </div>
       <div class="button-container">
@@ -43,6 +44,13 @@
         alt="Pausa"
         class="pause-btn"
         onclick="Utils.pauseVideo()"
+      />
+      <img
+        id="discord"
+        src="assets/discord.png"
+        alt="Pausa"
+        class="discord-btn"
+        onclick="Utils.openDiscord()"
       />
     </div>
     <div class="corner-images">
