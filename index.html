@@ -12,21 +12,21 @@
       muted
       loop
       class="background-video"
-      onclick="pauseVideo()"
+      onclick="Utils.pauseVideo()"
     >
-      <source src="assets/background3.mp4" type="video/mp4" />
+      <source src="assets/background2.mp4" type="video/mp4" />
       Tu navegador no soporta video.
     </video>
     <div class="container">
       <div class="header">
         <div class="title">
-          <img src="assets/icon.png" alt="Título del Launcher" width="400" />
+          <img src="assets/icon2.png" alt="Título del Launcher" width="600" />
         </div>
       </div>
       <div class="button-container">
-        <button class="button" onclick="openMinecraft()">Start</button>
-        <button class="button-small" onclick="downloadPacks()">
-          Download Packs
+        <button class="button" onclick="Utils.openMinecraft()">Start</button>
+        <button class="button-small" onclick="Utils.downloadTextures()">
+          Download Textures
         </button>
       </div>
     </div>
@@ -35,14 +35,14 @@
         src="assets/reloadLauncher.png"
         alt="Recargar"
         class="reload-btn"
-        onclick="reloadLauncher()"
+        onclick="Utils.reloadLauncher()"
       />
       <img
         id="playicon"
         src="assets/playing_video.png"
         alt="Pausa"
         class="pause-btn"
-        onclick="pauseVideo()"
+        onclick="Utils.pauseVideo()"
       />
     </div>
     <div class="corner-images">
@@ -56,6 +56,6 @@
       />
       <span id="ping">0</span>
     </div>
-    <script src="main.js"></script>
+    <script src="src/main.js"></script>
   </body>
 </html>
